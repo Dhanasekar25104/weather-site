@@ -130,4 +130,7 @@ h3 {
   .details h4 {
     width: 160px;
   }
+  .weather {
+    height: 600px;
+  }
 }
