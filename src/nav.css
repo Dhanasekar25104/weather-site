@@ -2,9 +2,6 @@
   background-color: black;
   display: flex;
   align-items: center;
-
-  border-radius: 10px 10px 0 0;
-  margin: 2px 3px;
 }
 .nav img {
   width: 50px;
