@@ -1,10 +1,35 @@
-.nav {
+.nav,
+.light {
   background-color: black;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  transition: 1s;
+  border-bottom: 1px solid black;
 }
-.nav i {
-  font-size: 25px;
+.nav i,
+.light i {
+  font-size: 30px;
   margin: 20px;
-  color: yellow;
+  color: var(--black);
+  transition: 0.5s;
+}
+.nav i:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  transition: 0.5s;
+}
+.light i:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  transition: 0.5s;
+}
+
+.light {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  color: black;
+  justify-content: space-between;
+  transition: 1s;
 }

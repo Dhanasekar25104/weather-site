@@ -1,23 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
-
+import Weather from "./weather.js"
+import Nav from "./nav.js"
+import React from 'react';
 function App() {
+  const [lightmode,setLightmode]=React.useState(false)
+  function change(){
+     setLightmode(pre=>!pre)
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <Nav change={change} lightmode={lightmode}/>
+   <Weather lightmode={lightmode}/>
     </div>
   );
 }

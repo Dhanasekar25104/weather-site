@@ -1,33 +1,60 @@
 :root {
   --grey: #ededed;
   --blue: #171717;
-  --lightblack: #444444;
+  --lightblack: #292727;
   --black: #da0037;
 }
 body {
   color: var(--grey);
   font-family: "Poppins", sans-serif;
 }
-.weather form input {
-  width: 280px;
+.container,
+.container-light {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--lightblack);
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.container-light {
+  background-color: white;
+}
+.weather form input,
+.weather-light form input {
+  width: 300px;
   height: 40px;
-  border-radius: 5px;
+  border-radius: 25px;
   font-size: 15px;
   margin-left: 10px;
+  margin-bottom: 10px;
   padding: 10px;
+  border: 2px solid black;
 }
 
-.weather form button {
+.weather form button,
+.weather-light form button {
   height: 40px;
   width: 100px;
   background-color: var(--lightblack);
   color: var(--grey);
-  margin-left: 5px;
-  border-radius: 5px;
+  margin-left: 10px;
+  border-radius: 25px;
+  border: 1px solid var(--blue);
   font-size: 15px;
   transition: 1s;
 }
-.details {
+.weather form button:hover,
+.weather-light form button:hover {
+  cursor: pointer;
+  border: 1px solid var(--grey);
+}
+.weather-light form button:hover {
+  border: 2px solid var(--black);
+}
+.details,
+.details-change {
   width: 400px;
   height: 500px;
   background-color: var(--blue);
@@ -35,36 +62,49 @@ body {
   margin: 10px;
   padding: 10px;
   box-shadow: 2px 2px 10px black;
+  transition: 1s;
 }
-.details span {
+.details span,
+.details-change span {
   color: var(--grey);
 }
-.weather {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  height: 700px;
+.details-change {
+  background-color: white;
+  color: black;
+  transition: 1s;
+}
+.weather,
+.weather-light {
+  margin: 30px;
+}
+.weather-light {
+  background-color: white;
 }
 .temp h1 {
   text-align: center;
   font-size: 3em;
 }
-.details h2 {
+.details h2,
+.details-change h2 {
   margin-top: 200px;
   text-align: center;
   font-size: 2em;
 }
 .details h1,
+i,
+.details-change h1,
 i {
   margin: 10px;
+  text-align: start;
 }
-.details ul {
+.details ul,
+.details-change ul {
   list-style: none;
   padding: 20px;
 }
 
-.details ul {
+.details ul,
+.details-change ul {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
@@ -73,18 +113,32 @@ i {
   display: block;
   margin: 10px 0px 10px 20px;
 }
+.details-change ul li span {
+  color: white;
+  display: block;
+  margin: 10px 0px 10px 20px;
+}
 .details ul li {
   border: 1px solid var(--grey);
   border-radius: 5px;
 }
-.details ul li:nth-child(4) span {
+.details-change ul li {
+  border: 1px solid var(--black);
+  border-radius: 5px;
+  background-color: var(--lightblack);
+  color: white;
+}
+.details ul li:nth-child(4) span,
+.details-change ul li:nth-child(4) span {
   margin-left: -1px;
 }
 .details h2,
-h3 {
+h3,
+.details-change h2 {
   text-align: center;
 }
-.details img {
+.details img,
+.details-change img {
   width: 80px;
   height: 80px;
   margin-right: 10px;
@@ -95,13 +149,15 @@ h3 {
   align-items: center;
 }
 .weather form input:focus {
-  outline-color: var(--black);
+  outline-color: var(--lightblack);
 }
 
-.details i {
+.details i,
+.details-change i {
   color: var(--black);
 }
-.details h4 {
+.details h4,
+.details-change h4 {
   margin: 15px 0px 0px 15px;
   letter-spacing: 2px;
   background-color: #444444;
@@ -110,27 +166,39 @@ h3 {
   padding: 2px;
   border-radius: 15px;
 }
-
+.details-change h4 {
+  color: white;
+}
+.error {
+  font-size: 30px;
+  margin-top: 200px;
+}
 @media screen and (max-width: 550px) {
-  .details {
+  .details,
+  .details-change {
     width: 270px;
-    height: 420px;
+    height: 450px;
     font-size: 10px;
   }
-  .weather form input {
+  .weather form input,
+  .weather-light form input {
     width: 180px;
     height: 40px;
   }
-  .details ul li {
+  .details ul li,
+  .details-change ul li {
     font-size: 15px;
   }
-  .weather form button {
+  .weather form button,
+  .weather-light form button {
     width: 80px;
   }
-  .details h4 {
+  .details h4,
+  .details-change h4 {
     width: 160px;
   }
-  .weather {
-    height: 600px;
+  .weather,
+  .weather-light {
+    height: 550px;
   }
 }
