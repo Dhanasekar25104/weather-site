@@ -187,8 +187,10 @@ h3,
   }
   .details ul li,
   .details-change ul li {
-    font-size: 15px;
+    font-size: 12px;
+    padding-right: 10px;
   }
+
   .weather form button,
   .weather-light form button {
     width: 80px;
