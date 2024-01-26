@@ -39,5 +39,5 @@ https://openweathermap.org/
 
 ## Icons
 
-I used icons form https://fontawesome.com/
+I used icons from https://fontawesome.com/
 
